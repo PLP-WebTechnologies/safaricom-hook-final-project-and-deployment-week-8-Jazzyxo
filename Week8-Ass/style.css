@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap');
+
+:root {
+    --backdrop: #f5efeb;
+    --words: #567cbd;
+    --hover: #2f4156;
+    --light: #fff;
+    --dark: #222;
+    --primaryHover: #1a2b4c;
+}
+
+body {
+    background: var(--backdrop);
+    font-family: "Playwrite IN", serif;
+    color: var(--words);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+
+/* Logo Styling */
+.logo {
+    font-family: "Playwrite IN", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2em;
+    background: linear-gradient(to right, #567cbd, #2f4156);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+body.light .logo {
+    color: var(--dark);
+}
+
+/* Navbar Styling */
+.nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav .hidden {
+    display: none;
+}
+
+.nav li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav li a {
+    color: var(--words);
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+body.light .nav li a {
+    color: var(--dark);
+}
+
+.nav li:hover a,
+body.light .nav li:hover a {
+    color: var(--primaryHover);
+}
+
+.nav li  button {
+    background: var(--primaryHover);
+    color: var(--backdrop);
+    border-radius: 50px 30px 30px 0;
+    margin-right: 20px;
+}
+
+
+
+
+.image {
+    width: 150px; /* Square size */
+    height: 150px; /* Same as width to keep it square */
+    border-radius: 8px; /* Slight rounded corners, adjust as needed */
+    object-fit: cover;
+    display: block;
+    animation: fadeOut 2s infinite alternate;
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+/* Image container for proper positioning */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Prevents overlap with the next section */
+}
+
+/* Ensure the contact section has enough spacing */
+.contact {
+    margin-top: 60px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .image {
+        width: 120px;
+        height: 120px;
+    }
+}
